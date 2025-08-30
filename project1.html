@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deep Learning for Image Analysis | Project Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      color: #222;
+    }
+    .article-header {
+      background: linear-gradient(90deg, #1a73e8 0%, #4285f4 100%);
+      color: #fff;
+      padding: 48px 0 32px 0;
+      text-align: center;
+    }
+    .article-header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .article-header .meta {
+      font-size: 1.1em;
+      opacity: 0.95;
+      margin-bottom: 0;
+    }
+    .article-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 60px 24px;
+      background: #fff;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 40px;
+    }
+    .article-main {
+      flex: 3;
+      min-width: 0;
+    }
+    .article-sidebar {
+      flex: 1;
+      min-width: 220px;
+      max-width: 260px;
+      padding-left: 20px;
+      border-left: 1px solid #eee;
+      position: sticky;
+      top: 40px;
+      height: fit-content;
+      background: #fafbfc;
+      border-radius: 12px;
+      display: none;
+    }
+    @media (min-width: 1000px) {
+      .article-sidebar {
+        display: block;
+      }
+    }
+    .sidebar-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1a73e8;
+    }
+    .sidebar-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar-nav li {
+      margin-bottom: 10px;
+    }
+    .sidebar-nav a {
+      color: #155ab6;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .sidebar-nav a:hover {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+    .article-section {
+      margin-bottom: 48px;
+    }
+    .article-section h2 {
+      font-size: 2em;
+      color: #1a73e8;
+      margin-bottom: 18px;
+      margin-top: 0;
+      font-weight: 700;
+    }
+    .article-section h3 {
+      font-size: 1.2em;
+      color: #155ab6;
+      margin-bottom: 10px;
+      margin-top: 32px;
+      font-weight: 600;
+    }
+    .article-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 12px rgba(26,115,232,0.07);
+    }
+    .timeline {
+      margin: 0 0 40px 0;
+      padding: 0;
+      list-style: none;
+      border-left: 3px solid #1a73e8;
+      position: relative;
+    }
+    .timeline-event {
+      position: relative;
+      margin-bottom: 32px;
+      padding-left: 32px;
+    }
+    .timeline-event:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -11px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 3px solid #1a73e8;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-date {
+      font-size: 0.98em;
+      color: #888;
+      margin-bottom: 2px;
+    }
+    .timeline-desc {
+      font-size: 1.08em;
+      color: #333;
+    }
+    .download-btn {
+      padding: 10px 28px;
+      border: none;
+      border-radius: 22px;
+      background: #1a73e8;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 18px;
+    }
+    .download-btn:hover {
+      background: #155ab6;
+      color: #fff;
+      text-decoration: none;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: #1a73e8;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .article-container {
+        flex-direction: column;
+        gap: 0;
+        padding: 24px 6vw 40px 6vw;
+      }
+      .article-sidebar {
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .article-header h1 { font-size: 2em; }
+      .article-section h2 { font-size: 1.3em; }
+      .article-container { padding: 12px 2vw 24px 2vw; }
+    }
+  </style>
+</head>
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="article-header">
+    <h1>Deep Learning for Image Analysis</h1>
+    <div class="meta">Research Project &middot; Jan 2024 – May 2025</div>
+  </div>
+  <div class="article-container">
+    <!-- Sidebar navigation for long docs -->
+    <aside class="article-sidebar">
+      <div class="sidebar-title">Sections</div>
+      <ul class="sidebar-nav">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#discussion">Discussion</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+      </ul>
+    </aside>
+    <main class="article-main">
+      <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+      <section class="article-section" id="overview">
+        <h2>Overview</h2>
+        <img class="article-img" src="img/projects/sample1.jpg" alt="Project Main Image">
+        <p>
+          This project explores the use of Convolutional Neural Networks (CNNs) for medical image segmentation and classification. The goal was to improve diagnostic accuracy using deep learning techniques. The work involved dataset curation, model development, and extensive evaluation.
+        </p>
+      </section>
+      <section class="article-section" id="timeline">
+        <h2>Project Timeline</h2>
+        <ul class="timeline">
+          <li class="timeline-event">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">Jan 2024</div>
+            <div class="timeline-desc">Project initiated, literature review and dataset search.</div>
+          </li>
+          <li class="timeline-event">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">Mar 2024</div>
+            <div class="timeline-desc">Data preprocessing and annotation completed.</div>
+          </li>
+          <li class="timeline-event">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">Jul 2024</div>
+            <div class="timeline-desc">Developed and trained custom CNN models.</div>
+          </li>
+          <li class="timeline-event">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">Nov 2024</div>
+            <div class="timeline-desc">Evaluation and comparison with baseline methods.</div>
+          </li>
+          <li class="timeline-event">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">May 2025</div>
+            <div class="timeline-desc">Paper accepted at ICVGIP 2025, project completed.</div>
+          </li>
+        </ul>
+      </section>
+      <section class="article-section" id="methods">
+        <h2>Methods</h2>
+        <h3>Data Collection</h3>
+        <p>
+          Medical images were collected from open-access datasets and annotated by experts. Data augmentation techniques were applied to increase diversity.
+        </p>
+        <h3>Model Architecture</h3>
+        <p>
+          A custom CNN architecture was designed for segmentation and classification tasks. The model consists of multiple convolutional, pooling, and fully connected layers.
+        </p>
+        <h3>Training</h3>
+        <p>
+          The model was trained using cross-entropy loss and Adam optimizer. Hyperparameters were tuned using grid search.
+        </p>
+      </section>
+      <section class="article-section" id="results">
+        <h2>Results</h2>
+        <ul>
+          <li>Achieved 95% accuracy on the validation dataset.</li>
+          <li>Outperformed baseline models by 7%.</li>
+          <li>Demonstrated robust segmentation on challenging cases.</li>
+        </ul>
+      </section>
+      <section class="article-section" id="discussion">
+        <h2>Discussion</h2>
+        <p>
+          The results indicate that deep learning models can significantly improve medical image analysis. Future work includes expanding the dataset and exploring transfer learning approaches.
+        </p>
+      </section>
+      <section class="article-section" id="documentation">
+        <h2>Documentation</h2>
+        <p>
+          For full technical details, download the project report below.
+        </p>
+        <a class="download-btn" href="docs/project1_report.pdf" target="_blank">Download PDF</a>
+      </section>
+    </main>
+  </div>
+  <div w3-include-html="footer.html"></div>
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projects & Works | Nikhileswara Rao Sulake</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .projects-header {
+      text-align: center;
+      margin: 40px 0 30px 0;
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 0 10px;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 18px 18px 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(26,115,232,0.13);
+    }
+    .project-thumb {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      background: #eee;
+    }
+    .project-title {
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a73e8;
+    }
+    .project-summary {
+      font-size: 1em;
+      color: #444;
+      margin-bottom: 18px;
+      min-height: 48px;
+    }
+    .project-btn {
+      padding: 8px 24px;
+      border: none;
+      border-radius: 20px;
+      background: #1a73e8;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .project-btn:hover {
+      background: #155ab6;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div w3-include-html="navbar.html"></div>
+
+  <div class="projects-header">
+    <h2>Projects & Works</h2>
+    <p>Explore my research projects, literature reviews, and more</p>
+  </div>
+  <div class="projects-grid">
+    <!-- Example Project Card -->
+    <div class="project-card">
+      <img class="project-thumb" src="img/gallery/profile_main_pic.jpg" alt="Project 1">
+      <div class="project-title">Deep Learning for Image Analysis</div>
+      <div class="project-summary">A research project on using CNNs for medical image segmentation and classification.</div>
+      <a class="project-btn" href="project1.html">View Details</a>
+    </div>
+    <div class="project-card">
+      <img class="project-thumb" src="img/gallery/profile_main_pic.jpg" alt="Project 2">
+      <div class="project-title">Literature Review: GANs in Healthcare</div>
+      <div class="project-summary">A comprehensive review of Generative Adversarial Networks in medical data synthesis.</div>
+      <a class="project-btn" href="project1.html">View Details</a>
+    </div>
+    <div class="project-card">
+      <img class="project-thumb" src="img/gallery/profile_main_pic.jpg" alt="Project 3">
+      <div class="project-title">IoT-based Smart Agriculture</div>
+      <div class="project-summary">Developed a sensor network for real-time crop monitoring and analytics.</div>
+      <a class="project-btn" href="project1.html">View Details</a>
+    </div>
+    <!-- Add more project cards as needed -->
+  </div>
+
+  <div w3-include-html="footer.html"></div>
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+</body>
+</html>
