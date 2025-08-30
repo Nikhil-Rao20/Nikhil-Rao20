@@ -2,33 +2,32 @@
 <html lang="en">
 
 <head>
-   <!-- Metadata for the Webpage -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Contact, Santosh Mohan Rajkumar</title>
+   <title>Gallery, Nikhileswara Rao Sulake</title>
 
-   <!-- Favicons -- We recommend this site for generating favicons: https://www.favicon-generator.org/ -->
+   <!-- Favicons -->
    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+   <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+   <link rel="manifest" href="favicon/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
 
    <!-- Bootstrap CSS files-->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
 
    <!-- jQuery UI CSS (optional) -->
    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -38,192 +37,197 @@
    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
 
-   <!-- Academicons Courtesy of https://jpswalsh.github.io/academicons/ -->
+   <!-- Academicons -->
    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
    <!-- Local styles -->
    <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
 
+   <style>
+    body {
+      background: #f7f7f7;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gallery-header {
+      text-align: center;
+      margin: 40px 0 20px 0;
+    }
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+    .gallery-tab {
+      padding: 10px 30px;
+      border: none;
+      background: #fff;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .gallery-tab.active, .gallery-tab:hover {
+      background: #1a73e8;
+      color: #fff;
+    }
+    .masonry-gallery {
+      columns: 1;
+      column-gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 0 10px;
+    }
+    @media (min-width: 600px) {
+      .masonry-gallery { columns: 2; }
+    }
+    @media (min-width: 900px) {
+      .masonry-gallery { columns: 3; }
+    }
+    .gallery-item {
+      display: none;
+      background: #fff;
+      margin: 0 0 18px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item.show {
+      display: inline-block;
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(26,115,232,0.13);
+    }
+    .gallery-img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: filter 0.2s;
+    }
+    .gallery-item:hover .gallery-img {
+      filter: brightness(0.92) saturate(1.1);
+    }
+    .gallery-caption {
+      padding: 14px 18px 12px 18px;
+      font-size: 1em;
+      color: #444;
+      background: #fff;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+   </style>
 </head>
-<style>
-body {
-  /* padding: 30px 0; */
-  position: relative;
-}
 
-.gallery {
-  width: 600px;
-  margin: auto;
-  border-radius: 3px;
-  overflow: hidden;
-  //position: relative;
-}
-.img-c {
-  width: 200px;
-  height: 200px;
-  float: left;
-  position: relative;
-  overflow: hidden;
-}
-
-.img-w {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: transform ease-in-out 300ms;
-}
-
-.img-w img {
-  display: none;
-}
-
-.img-c {
-    transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
-}
-
-.img-c:hover .img-w {
-  transform: scale(1.08);
-  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
-}
-
-.img-c.active {
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute;
-  z-index: 2;
-  //transform: translateX(-50%);
-}
-
-.img-c.postactive {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.img-c.active.positioned {
-  left: 0 !important;
-  top: 0 !important;
-  transition-delay: 50ms;
-}
-
-</style>
 <body>
-    <!-- navbar include -->
-    <div w3-include-html="navbar.html"></div>
+  <div w3-include-html="navbar.html"></div>
 
-   <div class="gallery">
-      <div class="img-w">
-        <img src="img/gallery/cec.png" alt="Engineering Building" />
-      <p>Engineering Building, Miami University</p></div>
-      <div class="img-w">
-         <img src="img/gallery/mu1.png" alt="Engineering Building" />
-       <p>Engineering Building, Miami University</p></div>
-       <div class="img-w">
-         <img src="img/gallery/admin.jpg" alt="Engineering Building" />
-       <p>Roudebush Hall, Miami University</p></div>
-       <div class="img-w">
-         <img src="img/gallery/clock.png" alt="Engineering Building" />
-       <p>Clock Tower, Miami University</p></div>
-       <div class="img-w">
-         <img src="img/gallery/trenton.png" alt="Engineering Building" />
-       <p>OX-TR road, MU</p></div>
-       <div class="img-w">
-         <img src="img/gallery/snow1.png" alt="Engineering Building" />
-       <p>Snow @ Miami University</p></div>
-       <div class="img-w">
-         <img src="img/gallery/millet.png" alt="Engineering Building" />
-       <p>Millet Hall, Miami University</p></div>
-       <div class="img-w">
-         <img src="img/gallery/ox.png" alt="Engineering Building" />
-       <p>Oxford, Ohio</p></div>
-      
-       <div class="img-w">
-         <img src="img/gallery/oxsn.jpg" alt="Engineering Building" />
-       <p>Snow @ Oxford, Ohio</p></div>
-       
-      
+  <div class="gallery-header">
+    <h2>Photo Gallery</h2>
+    <p>Explore my research, achievements, and travel adventures</p>
+  </div>
+  <div class="gallery-tabs">
+    <button class="gallery-tab active" data-tab="research">Research</button>
+    <button class="gallery-tab" data-tab="achievements">Achievements</button>
+    <button class="gallery-tab" data-tab="travelling">Travelling</button>
+  </div>
+  <div class="masonry-gallery" id="gallery">
+    <!-- Research Photos -->
+    <div class="gallery-item" data-category="research">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="In the Lab">
+      <div class="gallery-caption">Working on deep learning models in the lab</div>
     </div>
+    <div class="gallery-item" data-category="research">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Conference Poster">
+      <div class="gallery-caption">Presenting my research poster at ICVGIP 2025</div>
+    </div>
+    <!-- Add more research images as needed -->
 
+    <!-- Achievements Photos -->
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Award Ceremony">
+      <div class="gallery-caption">Receiving the Best Paper Award</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Certificate">
+      <div class="gallery-caption">Certification in AI & ML from DRDO & DIAT</div>
+    </div>
+    <!-- Add more achievements images as needed -->
 
-   <!-- footer include -->
-   <div w3-include-html="footer.html"></div>
+    <!-- Travelling Photos -->
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Eiffel Tower, Paris">
+      <div class="gallery-caption">Eiffel Tower, Paris</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Colosseum, Rome">
+      <div class="gallery-caption">Colosseum, Rome</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Times Square, NYC">
+      <div class="gallery-caption">Times Square, New York</div>
+    </div>
+    <!-- Add more travelling images as needed -->
+  </div>
 
+  <div w3-include-html="footer.html"></div>
 
-   
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
-   <!-- Back-to-top button -->
-   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap JS Library -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <!-- html file include script | used for navbar and footer -->
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML()
+  </script>
 
+  <script>
+    // Show only the selected tab's images
+    function showGalleryTab(tab) {
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (item.getAttribute('data-category') === tab) {
+          item.classList.add('show');
+        } else {
+          item.classList.remove('show');
+        }
+      });
+    }
 
-   <!-- jQuery -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    // On tab click
+    document.querySelectorAll('.gallery-tab').forEach(tabBtn => {
+      tabBtn.addEventListener('click', function() {
+        document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        showGalleryTab(this.getAttribute('data-tab'));
+      });
+    });
 
-   <!-- Bootstrap JS Library -->
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    // On page load, show only research images
+    document.addEventListener('DOMContentLoaded', function() {
+      showGalleryTab('research');
+    });
+  </script>
 
-   <!-- html file include script | used for navbar and footer -->
-   <script src="js/w3data.js"></script>
-   <script>
-      w3IncludeHTML()
-   </script>
-
-   <!-- Local scripts -->
-   <!-- <script src="js/main.js"></script> -->
-   <script>
-      $(function() {
-  $(".img-w").each(function() {
-    $(this).wrap("<div class='img-c'></div>")
-    let imgSrc = $(this).find("img").attr("src");
-     $(this).css('background-image', 'url(' + imgSrc + ')');
-  })
-            
-  
-  $(".img-c").click(function() {
-    let w = $(this).outerWidth()
-    let h = $(this).outerHeight()
-    let x = $(this).offset().left
-    let y = $(this).offset().top
-    
-    
-    $(".active").not($(this)).remove()
-    let copy = $(this).clone();
-    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active")
-    $(".active").css('top', y - 8);
-    $(".active").css('left', x - 8);
-    
-      setTimeout(function() {
-    copy.addClass("positioned")
-  }, 0)
-    
-  }) 
-  
-  
-
-  
-})
-
-$(document).on("click", ".img-c.active", function() {
-  let copy = $(this)
-  copy.removeClass("positioned active").addClass("postactive")
-  setTimeout(function() {
-    copy.remove();
-  }, 500)
-})
-   </script>
-
-<script>
-   $(document).ready(function() {
+  <script>
+    $(document).ready(function() {
       $("li#gallery a").addClass("active");
       $("li#gallery a").addClass("hvr-bubble-bottom");
-   });
-</script>
-   
-
+    });
+  </script>
 </body>
-
 </html>
