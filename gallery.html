@@ -79,10 +79,10 @@
     }
     .masonry-gallery {
       columns: 1;
-      column-gap: 18px;
-      max-width: 1100px;
+      column-gap: 20px;
+      max-width: 1200px;
       margin: 0 auto 60px auto;
-      padding: 0 10px;
+      padding: 0 15px;
     }
     @media (min-width: 600px) {
       .masonry-gallery { columns: 2; }
@@ -90,10 +90,13 @@
     @media (min-width: 900px) {
       .masonry-gallery { columns: 3; }
     }
+    @media (min-width: 1200px) {
+      .masonry-gallery { columns: 4; }
+    }
     .gallery-item {
       display: none;
       background: #fff;
-      margin: 0 0 18px;
+      margin: 0 0 20px;
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
@@ -101,6 +104,8 @@
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
       position: relative;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
     .gallery-item.show {
       display: inline-block;
@@ -116,9 +121,20 @@
       object-fit: cover;
       transition: filter 0.2s;
     }
+    
+         /* Special styling for travelling tab images */
+     .gallery-item[data-category="travelling"] .gallery-img {
+       aspect-ratio: auto;
+       height: 100%;
+       object-fit: cover;
+       max-height: none;
+       min-height: 300px;
+       background: none;
+     }
     .gallery-item:hover .gallery-img {
       filter: brightness(0.92) saturate(1.1);
     }
+    
     .gallery-caption {
       padding: 14px 18px 12px 18px;
       font-size: 1em;
@@ -133,9 +149,21 @@
 <body>
   <div w3-include-html="navbar.html"></div>
 
-  <div class="gallery-header">
-    <h2>Photo Gallery</h2>
-    <p>Explore my research, achievements, and travel adventures</p>
+  <div class="spacer-div-3 hidden-xs hidden-xs"></div>
+
+  <!-- Main content    -->
+  <div id="main-container" class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+
+          <h1>Photo Gallery</h1>
+
+          <p>Explore my research, achievements, and travel adventures</p>
+
+        </div>
+    </div>
+
   </div>
   <div class="gallery-tabs">
     <button class="gallery-tab active" data-tab="research">Research</button>
@@ -152,33 +180,198 @@
       <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Conference Poster">
       <div class="gallery-caption">Presenting my research poster at ICVGIP 2025</div>
     </div>
-    <!-- Add more research images as needed -->
 
     <!-- Achievements Photos -->
     <div class="gallery-item" data-category="achievements">
-      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Award Ceremony">
-      <div class="gallery-caption">Receiving the Best Paper Award</div>
+      <img class="gallery-img" src="img/achivs/drdo-1.png" alt="DRDO Achievement">
+      <div class="gallery-caption">DRDO & DIAT Certification in AI & ML</div>
     </div>
     <div class="gallery-item" data-category="achievements">
-      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Certificate">
-      <div class="gallery-caption">Certification in AI & ML from DRDO & DIAT</div>
+      <img class="gallery-img" src="img/achivs/drdo-3.png" alt="DRDO Certificate">
+      <div class="gallery-caption">Advanced AI Certification from DRDO</div>
     </div>
-    <!-- Add more achievements images as needed -->
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/intel-1.jpg" alt="Intel AI Hackathon">
+      <div class="gallery-caption">Intel AI Hackathon Participation</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/intel-2.jpg" alt="Intel Competition">
+      <div class="gallery-caption">Intel AI Competition Achievement</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/intel-3.jpg" alt="Intel Event">
+      <div class="gallery-caption">Intel AI Event Participation</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/intel-6.jpg" alt="Intel Recognition">
+      <div class="gallery-caption">Intel AI Recognition Award</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/maic-1.jpg" alt="MAIC Achievement">
+      <div class="gallery-caption">MAIC Competition Success</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/maic-3.png" alt="MAIC Certificate">
+      <div class="gallery-caption">MAIC Certification Achievement</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/ncc-3.jpg" alt="NCC Achievement">
+      <div class="gallery-caption">NCC Training Achievement</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/ncc-4.jpg" alt="NCC Certificate">
+      <div class="gallery-caption">NCC Certification</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/parabola-1.jpg" alt="Parabola Achievement">
+      <div class="gallery-caption">Parabola Competition Success</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/police-1.jpg" alt="Police Achievement">
+      <div class="gallery-caption">Police Department Recognition</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/police-2.jpg" alt="Police Certificate">
+      <div class="gallery-caption">Police Achievement Certificate</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/police-3.jpg" alt="Police Award">
+      <div class="gallery-caption">Police Department Award</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/scientia-2.jpg" alt="Scientia Achievement">
+      <div class="gallery-caption">Scientia Competition Success</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/blog.png" alt="Blog Achievement">
+      <div class="gallery-caption">Blog Writing Achievement</div>
+    </div>
+    <div class="gallery-item" data-category="achievements">
+      <img class="gallery-img" src="img/achivs/zoya-1.JPG" alt="Zoya Achievement">
+      <div class="gallery-caption">Zoya Project Achievement</div>
+    </div>
 
     <!-- Travelling Photos -->
     <div class="gallery-item" data-category="travelling">
-      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Eiffel Tower, Paris">
-      <div class="gallery-caption">Eiffel Tower, Paris</div>
+      <img class="gallery-img" src="img/travel/araku.jpg" alt="Araku Valley">
+      <div class="gallery-caption">Araku Valley - Scenic Beauty</div>
     </div>
     <div class="gallery-item" data-category="travelling">
-      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Colosseum, Rome">
-      <div class="gallery-caption">Colosseum, Rome</div>
+      <img class="gallery-img" src="img/travel/araku_2.jpg" alt="Araku Valley View">
+      <div class="gallery-caption">Araku Valley - Panoramic View</div>
     </div>
     <div class="gallery-item" data-category="travelling">
-      <img class="gallery-img" src="img/gallery/profile_main_pic.jpg" alt="Times Square, NYC">
-      <div class="gallery-caption">Times Square, New York</div>
+      <img class="gallery-img" src="img/travel/araku_3.jpg" alt="Araku Valley Landscape">
+      <div class="gallery-caption">Araku Valley - Mountain Landscape</div>
     </div>
-    <!-- Add more travelling images as needed -->
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/araku_4.jpg" alt="Araku Valley Scenery">
+      <div class="gallery-caption">Araku Valley - Natural Scenery</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/bang.jpg" alt="Bangalore">
+      <div class="gallery-caption">Bangalore - Garden City</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/bhavani_islands.jpg" alt="Bhavani Islands">
+      <div class="gallery-caption">Bhavani Islands - River Beauty</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/bza.jpg" alt="Vijayawada">
+      <div class="gallery-caption">Vijayawada - City View</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/charminar.jpg" alt="Charminar">
+      <div class="gallery-caption">Charminar - Hyderabad Icon</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/chidambaram.jpg" alt="Chidambaram Temple">
+      <div class="gallery-caption">Chidambaram Temple - Ancient Architecture</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/cmr_hyd.jpg" alt="CMR Hyderabad">
+      <div class="gallery-caption">CMR Hyderabad - Campus View</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/guitar.jpg" alt="Guitar Performance">
+      <div class="gallery-caption">Guitar Performance - Musical Journey</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/hyd_army_unit.jpg" alt="Hyderabad Army Unit">
+      <div class="gallery-caption">Hyderabad Army Unit - Military Visit</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/Hyder_army_unit.jpg" alt="Hyderabad Army Unit">
+      <div class="gallery-caption">Hyderabad Army Unit - Training Ground</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/iisc_2.jpg" alt="IISc Bangalore">
+      <div class="gallery-caption">IISc Bangalore - Premier Institute</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/IITKGP.jpg" alt="IIT Kharagpur">
+      <div class="gallery-caption">IIT Kharagpur - Campus Visit</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/Intel AI Hackathon.jpg" alt="Intel AI Hackathon">
+      <div class="gallery-caption">Intel AI Hackathon - Competition</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/kali_mata.jpg" alt="Kali Mata Temple">
+      <div class="gallery-caption">Kali Mata Temple - Spiritual Visit</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/kharagpur.jpg" alt="Kharagpur">
+      <div class="gallery-caption">Kharagpur - City Exploration</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/krishna_dam.jpg" alt="Krishna Dam">
+      <div class="gallery-caption">Krishna Dam - Engineering Marvel</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/meet_with_GC_Indian_army.jpg" alt="Meeting with GC Indian Army">
+      <div class="gallery-caption">Meeting with GC Indian Army - Military Interaction</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/orissa.jpg" alt="Odisha">
+      <div class="gallery-caption">Odisha - State Visit</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/rajamundry.jpg" alt="Rajahmundry">
+      <div class="gallery-caption">Rajahmundry - Cultural Heritage</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/sklm_aitam.jpg" alt="SKLM AITAM">
+      <div class="gallery-caption">SKLM AITAM - Institution Visit</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/srisailam_dam.jpg" alt="Srisailam Dam">
+      <div class="gallery-caption">Srisailam Dam - Hydroelectric Project</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/thala_for_reason.jpg" alt="Thala for Reason">
+      <div class="gallery-caption">Thala for Reason - Event Participation</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/thanjavur.jpg" alt="Thanjavur">
+      <div class="gallery-caption">Thanjavur - Historical City</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/trad.jpg" alt="Traditional Event">
+      <div class="gallery-caption">Traditional Event - Cultural Celebration</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/vicotira_mahal.jpg" alt="Victoria Mahal">
+      <div class="gallery-caption">Victoria Mahal - Palace Architecture</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/viza.jpg" alt="Vizag">
+      <div class="gallery-caption">Vizag - Port City</div>
+    </div>
+    <div class="gallery-item" data-category="travelling">
+      <img class="gallery-img" src="img/travel/vizag_beach.jpg" alt="Vizag Beach">
+      <div class="gallery-caption">Vizag Beach - Coastal Beauty</div>
+    </div>
   </div>
 
   <div w3-include-html="footer.html"></div>
